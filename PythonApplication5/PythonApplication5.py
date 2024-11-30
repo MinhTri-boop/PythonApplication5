@@ -97,7 +97,10 @@ class SchedulerApp(QMainWindow):
         self.tasks = load_tasks_from_file()
         self.completed_tasks = []  # Danh sách công việc đã hoàn thành
         self.init_ui()
-        self.update_calendar()
+        if self.tasks:
+         self.schedule_tasks()
+        else:
+         self.update_calendar()
 
     def init_ui(self):
         layout = QVBoxLayout()
